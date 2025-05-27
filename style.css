@@ -11,6 +11,8 @@ ul {
 	--background: #098021;
 	--text_backing: #7ad993;
 	--accent: #214f2a;
+	--popup: #0a6b1d;
+	--menu: #13912c;
 }
 
 body {
@@ -23,6 +25,13 @@ body {
 	position: fixed;
 	background: var(--dark_green);;
 	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	gap: 15%;
+}
+
+#end-header {
+	margin-right: 30px;
 }
 
 .content2 {
@@ -30,6 +39,7 @@ body {
 	grid-template-columns: 120px auto;
 	justify-content: center;
 	width: 900px;
+	height: 100%;
 	margin: 0 auto;
 	padding-top: 174px;
 	gap: 20px;
@@ -50,15 +60,55 @@ body {
 }
 
 .links {
+	height: fit-content;
 }
 
 .meat {
 }
 
+.mobile-dropdown {
+	display: none;
+}
+
 #content {
 	border: solid var(--accent);;
 	border-radius: 25px;
-	padding: 15px;
+	padding: 20px;
 	background: var(--text_backing);;
 	color: black;
+}
+
+@media only screen and (max-width: 950px) {
+	.content2 {
+		width: 95%;
+		grid-template-columns: auto;
+	}
+	.links {
+		display: none;
+	}
+	.mobile-dropdown {display: inline-block;}
+}
+
+button{
+	background: var(--dark_green);
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+}
+.dropdown a{
+	display: block;
+	padding: 10px 15px;
+}
+.dropdown .content{
+	display: none;
+	position: absolute;
+	background: var(--popup);
+	min-width: 100px;
+}
+.dropdown:hover .content{
+	display: block;
+}
+.dropdown a:hover {
+	background: var(--menu);
 }
