@@ -87,6 +87,7 @@ body {
 		display: none;
 	}
 	.mobile-dropdown {display: inline-block;}
+	.header {gap: 0;}
 }
 
 button{
