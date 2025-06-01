@@ -91,6 +91,15 @@ body {
 	color: black;
 }
 
+.game {
+	height: 100px;
+}
+.game:after {
+	content: "";
+	display: block;
+	height: 144px;
+}
+
 @media only screen and (max-width: 950px) {
 	.content2 {
 		width: 95%;
