@@ -50,11 +50,15 @@ body {
 	width: 900px;
 	margin: 0 auto;
 	gap: 20px;
-	min-height: 100%;
-	margin-bottom: -100px;
+	margin-bottom: -144px;
 }
 
-.content2:after {
+.page {
+	min-height: 100%;
+	margin-bottom: -144px;
+}
+
+.page:after {
 	content: "";
 	display: block;
 	height: 144px;
@@ -117,13 +121,30 @@ body {
 	.header {justify-content: flex-start; gap: 0;}
 }
 
-button{
+.top-links > button {
 	background: var(--dark_green);
 	color: white;
 	padding: 10px 15px;
 	border: none;
 	cursor: pointer;
 }
+
+.collapsible {
+	border: none;
+	color: black;
+	background: var(--text_backing);
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	outline: none;
+}
+.collapsee {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+}
+
 .dropdown a{
 	display: block;
 	padding: 10px 15px;
