@@ -16,6 +16,7 @@ html, body {
 	--accent: #214f2a;
 	--popup: #0a6b1d;
 	--menu: #13912c;
+	--footer_length: 122px;
 }
 
 body {
@@ -50,18 +51,20 @@ body {
 	width: 900px;
 	margin: 0 auto;
 	gap: 20px;
-	margin-bottom: -144px;
 }
 
 .page {
-	min-height: 100%;
-	margin-bottom: -144px;
+	min-height: calc(100% - (2 * --footer_length));
 }
 
 .page:after {
 	content: "";
 	display: block;
-	height: 144px;
+	height: 30px;
+}
+
+.height {
+	min-height: 100%;
 }
 
 .footer {
@@ -129,20 +132,23 @@ body {
 	cursor: pointer;
 }
 
-.collapsible {
+.mobile-dropdown > button {
+	background: var(--dark_green);
+	color: white;
+	padding: 10px 15px;
 	border: none;
-	color: black;
-	background: var(--text_backing);
 	cursor: pointer;
-	padding: 18px;
-	width: 100%;
-	text-align: left;
-	outline: none;
 }
-.collapsee {
-	padding: 0 18px;
-	display: none;
-	overflow: hidden;
+
+details > summary {
+	list-style-type: '>';
+}
+details[open] > summary {
+	list-style-type: 'v';
+}
+
+summary > h1,h2,h3,h4 {
+	display: inline-block;
 }
 
 .dropdown a{
