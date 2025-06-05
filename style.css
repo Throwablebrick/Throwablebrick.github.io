@@ -54,7 +54,7 @@ body {
 }
 
 .page {
-	min-height: calc(100% - (2 * --footer_length));
+	min-height: calc(100% - (1 * var(--footer_length)));
 }
 
 .page:after {
