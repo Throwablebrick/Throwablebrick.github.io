@@ -147,6 +147,9 @@ details[open] > summary {
 	list-style-type: 'v';
 }
 
+summary {
+	cursor: pointer;
+}
 summary > h1,h2,h3,h4 {
 	display: inline-block;
 }
