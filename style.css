@@ -27,7 +27,7 @@ body {
 .header {
 	padding: 15px;
 	position: fixed;
-	background: var(--dark_green);;
+	background: var(--dark_green);
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
