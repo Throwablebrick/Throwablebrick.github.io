@@ -4,7 +4,28 @@ class Header extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.innerHTML = 
+		this.innerHTML = `
+		<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+}
+.header {
+	padding: 15px;
+	position: fixed;
+	background: var(--dark_green);;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	gap: 7%;
+}
+#end-header {
+	margin-right: 30px;
+}
+</style>
 		<div class='header'>
 			<div class="dropdown">
 				<div class="mobile-dropdown">
@@ -19,6 +40,7 @@ class Header extends HTMLElement {
 			<a class="top-links" href="/pages/blog/home.html"><button><h1>Blog</h1></button></a>
 			<a class="top-links" id="end-header" href="/pages/wiki/home.html"><button><h1>Wiki</h1></button></a>
 		</div>
+		`;
 	}
 }
 
