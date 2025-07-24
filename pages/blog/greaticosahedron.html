@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Making the great icosahedron</title>
+		<link rel="stylesheet" href="/style.css">
+		<script src="/components/header.js" type="text/javascript" defer></script>
+	</head>
+	<body>
+		<div class="page">
+			<header-component></header-component>
+			<h1 id="title">Great icosahedron</h1>
+			<div class='content2'>
+				<div class="links" id='content'>
+					<ul>
+						<li><a href="/index.html">home</a></li>
+						<li><a href="/pages/wiki/home.html">wiki</a></li>
+					</ul>
+				</div>
+				<div class="meat" id='content'>
+					<h1>LOOK AT THIS THING!!!!!</h1>
+					<p><i>I made this thing omg!!!!!</i></p>
+					<img src="/images/greaticosahedron/head_on.jpg" alt="/images/where.png" style="width:714px">
+					<p>So I started making this project between june 18th 2024 and september 12th 2024 i'm not sure exactly when but those are: when I finished the last polyhedron project, and the date of my first picture for this project, so somewhere in there. This was my first project that uses two different non regular polygons as its components(technically its faces are regular triangles but they intersect so the parts that are exposed aren't) given that the three other kepler poinsot polyhedra that I made were the first ones to use non regular polygon components.
+					</p>
+					<table>
+					 	<td><img src="/images/greaticosahedron/pre-cut.jpg" alt="/images/where.png" style="width:300px"></td>
+						<td><p>Because they weren't regular I couldn't draw them with compas and ruler(not with my ability, not to mention acurately that is) and so I 3d modeled and printed the polygons, only a few milimeters thick so as to not waste filament, and traced it onto cardboard(pictured left though the lines are not very visible(it at least gives an idea of how much cardboard was used)) They also didn't tile the plane so I had to do my best to cram them together as best I can to minimize wasted cardboard.</p></td>	
+					</table>
+					<p>even just doing the tracing was a lot of work but was nothing compared to the cutting of them. Between the next two pictures there's an 8 month gap where I practically didn't work on the project at all but I eventually got all 180 pieces cut out and sorted. Sorted specifically because the larger pieces have a left and a right handed variant that are distinct(yes I could have just fliped them over but the other side often has markings on it from what the boxes used to house)</p>
+					<table>
+						<td><img src="/images/greaticosahedron/first_stack.jpg" alt="/images/where.png" style="width:325px"></td>
+						<td><img src="/images/greaticosahedron/all_stacks.jpg" alt="/images/where.png" style="width:388px"></td>
+					</table>
+					<p>While those pictures are 8 months apart all of the pieces got cut before I left the project on the backburner, I just forgot to get a picture of all of them before the next step. The reason for that long hiatus though was because for the next step I needed to bevel the inside edges(which is a bitch to do and design). To do this I usually 3d model and print a jig that will fit the piece while leaving and angled edge that I can carefully cut along with a boxcutter or craft knife. The thing about those jigs though is that the way I design them I just do a bunch of math to find the exact places the points need to be and then manually input thos into blender and connect them. Given they only have around 12 vertices it's managable but I screwed up on the one for the larger piece making it so that the angle was right but the slit to hold the piece was way too big and in order to fix it I would have to do most of the calculations over again which I didn't want to do. I also needed to print out the mirror image of it for the enantiomorph and all in all I was tired so it sat on my desk for forever untill I decided to just use a second piece of cardboard to make the gap snug with the piece as I cut and just got to work. I didn't want to lose momentum so for what might have been around a straight week pouring all my free time into it, I finally beveled all the edges. In doing so I think I finished listening to one and a half audiobooks while I worked on that part(elantris and warbreaker as my sister was reading elantris and I wanted to have read a book in common with her like the old days.)</p>
+					<br>
+					<p><i>Technically</i> you don't <i>need</i> to bevel the edges but if you don't then there will theoretically be holes at certain vertices. It also means that it is easier to point out what the "true" faces are in the model as it implies that there's an intersection where faces pass through each other. That's also why I only beveled the inside "edges" so that the mathematical edges stand out. See the photo later in the post with the face highlighted.</p>
+					<br>
+					<table>
+						<td><img src="/images/greaticosahedron/triangles.jpg" alt="/images/where.png" style="width:360px"></td>
+						<td><p>Gluing was something that I thought would be really quick as it roughly has in most other projects but quickly realized that it would still take a good amount of effort. It's also where I can screw things up the most and I should probably make more jigs to make it more percise. I didn't make a jig to put them together at this current stage and unfortunately I don't think that would have saved it too much as this part of the glueing showed that there was enough discrepency in the base "faces" that these first base... </p></td>
+					</table>
+					<p>inverted pyramid we'll call them, were not all exactly even as some were larger or shorter with varying degrees of gaps. I really need to find another meduim because at this point I'm taking cardboard to it's absolute limit but as it stands everything else costs money and I haven't paid a cent for these(that's not true actually, for this project specifically I bought a new hot glue gun because the one I was using sucked). Regardless doing this part without a jig was very fidly as I somehow managed to roughly hold it together with one hand and glue with another for all 60 inverted pyramids.</p>
+					<details>
+						<summary>
+							(a rant about the relatedness of the kepler poinsot polyhedra all so I can say that 60 has been the number of pieces for all three of the other kepler poinsot polyhedra)
+						</summary>
+						<p>So this is one of the kepler poinsot polyhedra which is a group containing the only 4 regular star polyhedra. To simplify that down it just means that of all the star polyhedra, polyhedra that have faces that intersect, they're the only ones that are regular, essentially they're the only ones with one kind of polygon as its face that are as symetrical as you can be(that sounds like hyperbole but tbh i'm not sure it is). The other three are all stellations of the dodecahedron(that's the d12 for you D&D people(everyone seems to know that name and plenty often assume its the d20 but the d20 is the icosahedron(more on that in a second))) which is hard to trully grasp and really hard to explain but that's what i'll try to do(later i'm sure i'll just put hyperlinks to more in depth articles but for now this is what you get). So to stellate a polyhedron, you take its faces and you extend them untill they meet. Some polyhedra like the cube and tetrahedron don't have faces that meet when you do this and they'll just go off into infinity never to intersect. So when you extend them till they meet again you they form these pockets that make up new polyhedra. This can be as simple as with the octahedron which has only one stellation(shoutout miracle musical I guess) or as complex as the icosahedron(I told you we'd get back to it) which has 59 different stellations. Now if you look at the kepler poinsot polyhedra you might be a bit confused that only one of them is a stellation of the icosahedron as one of them(the gread dodecahedron) just looks like you pushed in the faces of an icosahedron and another(the great stellated dodecahedron) looks like you just added spikes to the icosahedron while the remaining two look like you similarly added pyramids to the dodecahedron(the small stellated dodecahedron) and then did that same pushing in of the faces thing to that spiky dodecahedron(the great icosahedron); when in actuality the only one derived from the icosahedron as mentioned before. In the end it all breaks down to the fact that the dodecahedron and icosahedron are duals of each other, that is that each face on one of them, maps to a vertice on the other and vice versa. All that to say that once you really understand the concept of stellation and can visualize each face comes from you begin to see why some of these similarities apear. Needless to say, all of the stellations of the dodecahedron(as it only has three, all of which are kepler poinsot polyhedra) have had 60 pieces that i've had to make and assemble which makes sense when you look at the stellation diagram and know that all of the faces of the stellations have 5 parts like the five corners of a pentagon and being stellated from the dodecahedron will have there be 12 groups of these 5 pieced intersecting faces. It's just funny to see as you look at them and realize that(it gets even crazier when you realize that the small and great stellated dodecahedra both have the same pieces(because both of their faces are pentagrams) but are just aranged differently). So the fact that the great icosahedron looks like the small stellated dodecahedron with inverted pyramids it would follow that there would of cource be 60 of them(I know that's long winded and with no visuals but someday i'll write a <i>glorious</i> article on stellation with plenty of diagrams so I can finally have someone else get it without seeing a blank stare(I unfortunately don't think this part is legible withoug that as it stands but thanks for humoring me if anyone has read this part))</p>
+					</details>
+					<br>
+					<p>I tried very hard to just keep things lined up with just my hands like bofore but I needed to arrange these into pentagonal pyramids which, 1) 5 things are harder to hold than 3 and 2) freehanding a pentagon in any respect is asking for failure. So I did what do best and 3d modeled and printed another jig. For a second I thought I could just use my icosahedron jig(not actually used to make icosahedra but for the great dodecahedron) but realized how foolish that was as though it holds 5 triangles around a point, those triangles are equalateral and that severely changes at very least the dihedral angle between each section.</p>
+					<img src="/images/greaticosahedron/net.jpg" alt="/images/where.png" style="width:713px">
+					<p>With all the pentagonal pyramid esque shapes made I just needed to glue it together like they're pentagons making up a dodecahedron(even though its the stellation of the icosahedron, there's so much to talk about I really need to write that article) and that'd be it. Now for this I definitely should have made and used a jig because not only is it where small inacuracies would converge more than in any other step, even with normal ass pentagons it can be hard to freehand(I should remake my models of the platonic solids with proper jigs and consistent end size instead of consistent edge length). Because I didn't use a jig though there definitely ended up being some pieces at the end that were kind of botched placement wise if you look for them(though i've been told they're not as obvious to other people) especially the last piece. But finally it was done after a total minumum elapsed time of around 9 months(of the project being in progress though not exactly always worked on)</p>
+					<img src="/images/greaticosahedron/slightly_askew.jpg" alt="/images/where.png" style="width:713px">
+					<p>It's quite the marvel to see in person and really helps you conceptualize stellation if you stare at it long enough. It's really cool to find the real triangular faces within it, especially when you see one and then see a singular section and it feels like it can't also have just as neat of a triangle that it makes up but sure enough it does. As promised and as is pretty necesary here's pictures with a face highlighted.</p>
+					<table>
+						<td><img src="/images/greaticosahedron/inner_corner.jpg" alt="/images/where.png" style="width:356px"></td>
+						<td><img src="/images/greaticosahedron/inner_corner_high.jpg" alt="/images/where.png" style="width:356px"></td>
+					</table>
+					<table>
+						<td><img src="/images/greaticosahedron/side.jpg" alt="/images/where.png" style="width:356px"></td>
+						<td><img src="/images/greaticosahedron/side_face.jpg" alt="/images/where.png" style="width:356px"></td>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div id="left">
+				<p>i dunno man more links?</p>
+			</div>
+			<div id="right">
+				<ul>
+					<li><a href="#">more</a></li>
+					<li><a href="#">tests</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

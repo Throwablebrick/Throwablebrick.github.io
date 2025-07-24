@@ -1,30 +1,105 @@
 class Header extends HTMLElement {
-	constructor() {
-		super();
-	}
+  constructor() {
+    super();
+  }
 
-	connectedCallback() {
-		this.innerHTML = `
-		<style>
-			nav {
-				padding: 15px;
-				background: var(--dark_green);
-				width: 100%;
-				display: flex;
-				justify-content: flex-end;
-				gap: 7%;
-			}
-			#end-header {
-				margin-right: 30px;
-			}
-		</style>
-		<nav>
-			<a class="top-links" href="/index.html"><button><h1>Home</h1></button></a>
-			<a class="top-links" href="/pages/blog/home.html"><button><h1>Blog</h1></button></a>
-			<a class="top-links" id="end-header" href="/pages/wiki/home.html"><button><h1>Wiki</h1></button></a>
-			</nav>
-		`;
+  connectedCallback() {
+    this.innerHTML = `
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+}
+
+:root {
+	--dark_green: #084d15;
+	--background: #1c792e;
+	--text_backing: #7ad993;
+	--accent: #214f2a;
+	--popup: #0a6b1d;
+	--menu: #13912c;
+	--footer_length: 122px;
+}
+body {
+	background: var(--background);
+	color: white;
+}
+
+.header {
+	padding: 15px;
+	position: fixed;
+	background: var(--dark_green);
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	gap 7%;
+}
+
+#end-header {
+	margin-right: 30px;
+}
+
+#title {
+	padding-top: 174px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+.mobile-dropdown {
+	display: none;
+}
+
+.top-links > button {
+	background: var(--dark_green);
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+}
+.mobile-dropdown > button {
+	background: var(--dark_green);
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+}
+@media only screen and (max-width: 950px) {
+	.content2 {
+		width: 95%;
+		grid-template-columns: auto;
 	}
+	.links {
+		display: none;
+	}
+	.top-links {
+		display: none;
+	}
+	.mobile-dropdown {
+		display: inline-block;
+	}
+	.header {justify-content: flex-start; gap: 0;}
+}
+</style>
+<div class='header'>
+	<div class="dropdown">
+		<div class="mobile-dropdown">
+			<button><h1>==</h1></button>
+			<div class="content">
+				<a href="/index.html">home</a>
+				<a href="/pages/blog/home.html">blog</a>
+				<a href="/pages/wiki/home.html">wiki</a>
+			</div>
+		</div>
+	</div>
+	<a class="top-links" href="/index.html"><button><h1>Home</h1></button></a>
+	<a class="top-links" href="/pages/blog/home.html"><button><h1>Blog</h1></button></a>
+	<a class="top-links" id="end-header" href="/pages/wiki/home.html"><button><h1>Wiki</h1></button></a>
+</div>
+          `;
+  }
 }
 
 customElements.define('header-component', Header);

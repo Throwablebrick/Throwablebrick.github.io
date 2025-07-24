@@ -5,22 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Wiki directory</title>
 		<link rel="stylesheet" href="../../style.css">
-		<script src="/code.js"></script>
+		<script src="/components/header.js" type="text/javascript" defer></script>
 	</head>
 	<body>
-		<div class='header'>
-			<div class="dropdown">
-				<div class="mobile-dropdown">
-					<button><h1>==</h1></button>
-					<div class="content">
-						<a href="/index.html">Home</a>
-					</div>
-				</div>
-			</div>
-			<a class="top-links" href="/index.html"><button><h1>Home</h1></button></a>
-			<a class="top-links" id="end-header" href="/pages/wiki/home.html"><button><h1>Wiki</h1></button></a>
-		</div>
 		<div class="page">
+			<header-component></header-component>
 			<h1 id="title">Wiki: overview</h1>
 			<div class='content2'>
 				<div class="links" id='content'>
