@@ -5,23 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Main page</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="/components/header.js" type="text/javascript" defer></script>
 	</head>
 	<body>
-		<div class='header'>
-			<div class="dropdown">
-				<div class="mobile-dropdown">
-					<button><h1>==</h1></button>
-					<div class="content">
-						<a href="/index.html">home</a>
-						<a href="/pages/blog/home.html">blog</a>
-						<a href="/pages/wiki/home.html">wiki</a>
-					</div>
-				</div>
-			</div>
-			<a class="top-links" href="/index.html"><button><h1>Home</h1></button></a>
-			<a class="top-links" href="/pages/blog/home.html"><button><h1>Blog</h1></button></a>
-			<a class="top-links" id="end-header" href="/pages/wiki/home.html"><button><h1>Wiki</h1></button></a>
-		</div>
+		<header-component></header-component>
 		<div class="page">
 			<h1 id="title">Throwablebrick's personal website</h1>
 			<div class='content2'>
@@ -39,15 +26,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer">
-			<div id="left">
-				<p>Reach me at my email:</p>
-			</div>
-			<div id="right">
-				<ul>
-					<li><a href="mailto: throwablebricks@proton.me">throwablebricks@proton.me</a></li>
-				</ul>
-			</div>
-		</div>
+		<footer-component></footer-component>
 	</body>
 </html>

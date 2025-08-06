@@ -102,4 +102,60 @@ body {
   }
 }
 
+class Footer extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+}
+
+:root {
+	--dark_green: #084d15;
+	--background: #1c792e;
+	--text_backing: #7ad993;
+	--accent: #214f2a;
+	--popup: #0a6b1d;
+	--menu: #13912c;
+	--footer_length: 122px;
+}
+.footer {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	justify-content: space-evenly;
+	text-align: center;
+	align-items: stretch;
+	background: var(--dark_green);;
+	width: 100%;
+	padding: 50px 0 50px 0;
+}
+body {
+	background: var(--background);
+	color: white;
+}
+
+</style>
+<div class="footer">
+	<div id="left">
+		<p>Reach me at my email:</p>
+	</div>
+	<div id="right">
+		<ul>
+			<li><a href="mailto: throwablebricks@proton.me">throwablebricks@proton.me</a></li>
+		</ul>
+	</div>
+</div>
+          `;
+  }
+}
+
 customElements.define('header-component', Header);
+customElements.define('footer-component', Footer);
