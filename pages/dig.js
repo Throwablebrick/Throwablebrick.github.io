@@ -231,7 +231,13 @@ function run() {
 	let hash = `0,${depth},${full_time}`;
 	window.location.hash = hash;
 }
+
+function reset() {
+	window.location.hash = '';
+}
+
 document.getElementById('myButton').addEventListener('click',run);
+document.getElementById('resetButton').addEventListener('click',reset);
 document.getElementById('digs').addEventListener('keypress', function (e) {
 	if (e.key === 'Enter') {
 		run();
