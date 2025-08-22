@@ -10,9 +10,6 @@ class Header extends HTMLElement {
 	margin: 0;
 	padding: 0;
 }
-ul {
-	list-style-type: none;
-}
 
 :root {
 	--dark_green: #084d15;
@@ -114,9 +111,6 @@ class Footer extends HTMLElement {
 	margin: 0;
 	padding: 0;
 }
-ul {
-	list-style-type: none;
-}
 
 :root {
 	--dark_green: #084d15;
@@ -148,7 +142,7 @@ body {
 		<p>Reach me at my email:</p>
 	</div>
 	<div id="right">
-		<ul>
+		<ul sytle="list-style-type:none;">
 			<li><a href="mailto: throwablebricks@proton.me">throwablebricks@proton.me</a></li>
 		</ul>
 	</div>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>My First Website</title>
+		<link rel="stylesheet" href="/style.css">
+		<script src="/components/header.js" type="text/javascript" defer></script>
+		<link rel="shortcut icon" href="#">
+	</head>
+	<body>
+		<div class="page">
+			<header-component></header-component>
+			<h1 id="title">Main menu</h1>
+			<div class='content2'>
+				<div class="links" id='content'>
+					<ul>
+						<li><a href="/index.html">home</a></li>
+						<li><a href="/pages/blog/home.html">blog</a></li>
+						<li><a href="/pages/wiki/home.html">wiki</a></li>
+					</ul>
+				</div>
+				<div class="meat" id='content'>
+					<p>This is a sort of digging/archeology simulator that I made for D&D that a lot of people really wanted to see on my websote so that they could use it in their games, so here it is. At the moment the treasure table has yet to be implimented but it definitely gets the point across.</p>
+					<br>
+					<button id="myButton">Dig</button>
+					<input id="digs">
+					<br>
+					<br>
+					<p>
+						<textarea readonly style="width: 100%; height: 275px" id="results"></textarea>
+					</p>
+				</div>
+			</div>
+		</div>
+		<footer-component></footer-component>
+		<script>
+			const damage = 4;
+			const base_root = 4;
+
+			function roll(condition) {
+				let num = Math.floor(Math.random() * 100) + 1;
+				let time = 0;
+				let con = 0;
+				let rolls = 1;
+				let mess = '';
+
+				switch (condition) {
+					case 4:
+						con = 3;
+						num /= 2;
+						break;
+					case 3:
+						con = 0;
+						num /= 2;
+						break;
+				}
+
+				if (condition > 4 && condition < 9) {
+					if (condition === 5) {
+						num = 101;
+						mess += ('\nyou found a pit of water that is 20 feet deep, dex save to not fall in\n');
+						con = 9;
+					} else {
+						con = condition - 1;
+					}
+				}
+
+				if (num > 0 && num < 6) {
+					mess += ('you found nothing\n');
+				} else if (num < 17) {
+					const clust = Math.floor(Math.random() * 5) + 1;
+					mess += (`you found ${clust} clusters of pebbles\n`);
+					time += clust * 60;
+				} else if (num < 21) {
+					mess += ('you found a root imbued around a rock\n');
+					time += 60;
+				} else if (num < 31) {
+					mess += ('you found 3 rocks\n');
+					time += 240;
+				} else if (num < 51) {
+					const seconds = fight((Math.floor(Math.random() * 5) + 1) + (Math.floor(Math.random() * 5) + 1));
+					mess += (`you found 2 roots and you got past them in ${seconds} seconds\n`);
+					time += seconds;
+				} else if (num < 61) {
+					const rocks = Math.floor(Math.random() * 3) + 1;
+					const seconds = fight(Math.floor(Math.random() * base_root + 1) + 1);
+					mess += (`you found ${rocks} rocks and a root which was destroyed in ${seconds} seconds\n`);
+					time += (rocks * 60) + seconds;
+				} else if (num < 66) {
+					con = 8;
+					mess += ('you found nothing\n');
+				} else if (num < 71) {
+					mess += ("you found a big rock\n");
+					time += 180;
+				} else if (num < 73) {
+					const seconds = fight((Math.floor(Math.random() * 3) + 1) + (Math.floor(Math.random() * 3) + 1) + (Math.floor(Math.random() * 3) + 1) + (Math.floor(Math.random() * 3) + 1));
+					mess += (`you found a really big root destroyed in ${seconds} seconds\n`);
+					time += seconds;
+				} else if (num < 76) {
+					mess += ("you feel an uncontrollable urge to dig and go another 10 feet\n");
+					rolls--;
+					let out = roll(con);
+					time += out[1];
+					mess += out[2];
+					rolls+=out[3];
+					out = roll(con);
+					time += out[1];
+					mess += out[2];
+					rolls+=out[3];
+				} else if (num < 78) {
+					mess += ("you found a giant rock\nyou cannot dig around it.\n");
+					con = 9;
+				} else if (num < 80) {
+					mess += ('you found an item!(will be added next)\n');
+					mess += (" ^\n/ \\ \n |\ntreasure found\n");
+				} else if (num < 90) {
+					con = 4;
+					mess += ("you found that you're tired but must keep digging, you dig twice the amount at half the speed\n");
+					rolls--;
+					let out = roll(con);
+					time += out[1];
+					mess += out[2];
+					rolls+=out[3];
+					out = roll(con);
+					time += out[1];
+					mess += out[2];
+					rolls+=out[3];
+					con = out[0];
+				} else if (num < 101) {
+					let out = roll(1);
+					time += out[1];
+					mess += out[2];
+					rolls+=out[3];
+				}
+
+				if (condition !== 1) {
+					time += 420;
+				} else {
+					time = (time * 2) + 420;
+				}
+
+				return [con, time, mess, rolls];
+			}
+
+			function fight(target) {
+				let health = target;
+				let time = 0;
+
+				while (health >= 0) {
+					health--;//health - Math.floor(Math.random() * damage += 1) + 1
+					time += 6;
+				}
+
+				return time;
+			}
+			function run() {
+				let ipnut = '';
+				let numb = 0;
+
+				try {
+					ipnut = document.getElementById('digs').value;
+					numb = parseInt(ipnut);
+				} catch {
+					numb = 1;
+				}
+
+				let output = window.location.hash.split(',');
+				if (!(output.length === 3)) output = [0,0,0];
+				else {
+					output[1] = parseInt(output[1]);
+					output[2] = parseInt(output[2]);
+				}
+				let full_time = output[2];
+				let depth = output[1];
+
+				let message = '';
+				for (let i = 0; i < numb; i++) {
+					output = roll(output[0]);
+					full_time += output[1];
+					depth += 5 * output[3];
+					message += output[2]
+					message += (`\ntime taken: ${Math.floor(output[1] / 60)}:${String(output[1] % 60).padStart(2, '0')}\t${depth}'\n`);
+					if (output[0] === 9) {
+						message += ("new hole\n");
+						depth = 0;
+					}
+				}
+
+				message += (`total time: ${Math.floor(full_time / 3600)}:${String(Math.floor(full_time / 60) % 60).padStart(2, '0')}:${String(full_time % 60).padStart(2, '0')}\tnumber of rolls:`);
+				document.getElementById("results").textContent=message;
+				let hash = `0,${depth},${full_time}`;
+				window.location.hash = hash;
+			}
+			document.getElementById('myButton').addEventListener('click',run);
+			document.getElementById('digs').addEventListener('keypress', function (e) {
+				if (e.key === 'Enter') {
+					run();
+				}
+			});
+		</script>
+	</body>
+</html>

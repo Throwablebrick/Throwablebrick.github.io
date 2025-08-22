@@ -3,7 +3,6 @@
 	padding: 0;
 }
 ul {
-	list-style-type: none;
 }
 html, body {
 	height: 100%;
@@ -82,8 +81,13 @@ body {
 	height: fit-content;
 }
 
+.links > ul {
+	list-style-type: none;
+}
+
 .meat {
 	height: fit-content;
+	list-style-type: none;
 }
 
 .mobile-dropdown {
