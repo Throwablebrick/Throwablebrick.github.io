@@ -11,7 +11,7 @@
 	<body>
 		<div class="page">
 			<header-component></header-component>
-			<h1 id="title">Main menu</h1>
+			<h1 id="title">Digging table</h1>
 			<div class='content2'>
 				<div class="links" id='content'>
 					<ul>
@@ -21,15 +21,17 @@
 					</ul>
 				</div>
 				<div class="meat" id='content'>
-					<p>This is a sort of digging/archeology simulator that I made for D&D that a lot of people really wanted to see on my websote so that they could use it in their games, so here it is. At the moment the treasure table has yet to be implimented but it definitely gets the point across.</p>
+					<p>This is a sort of digging/archeology simulator that I made for D&D that a lot of people really wanted to see on my websote so that they could use it in their games, so here it is. Just enter the number of times you want to dig and keep going as long as you want. Your total time and depth will be displayed between roles and if you want to reset that, just delete everything past the # in the url</p>
 					<br>
 					<button id="myButton">Dig</button>
-					<input id="digs">
+					<input id="digs" value=1>
 					<br>
 					<br>
 					<p>
-						<textarea readonly style="width: 100%; height: 275px" id="results"></textarea>
+						<textarea readonly style="width: 100%; height: 300px" id="results"></textarea>
 					</p>
+					<br>
+					<p>I made this because once upon I time I had a player consistently ask if he found anything when he dug a hole to poop in the woods. He started doing it a bunch because once or twice I did indeed have him find something once in a while but it was all just based off of my judgement and he got annoyed when I told him he didn't find anything too many times in a row. Ultimately it became something I made into a d100 table for and became somewhat of a staple in my games. However it was really time consuming to have people roll on it again and again(as they often do) and not only that but it was also really hard to track how much time would pass(which was my way of ensuring they didn't just keep going indefinately) so I made it into a python script and shortly thereafter ported it to javascript and put it here.</p>
 				</div>
 			</div>
 		</div>
