@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+   <channel>
+      <title>Throwablebrick's personal website</title>
+	  <link>http://www.throwablebrick.com</link>
+      <description>Stay updated about what's new on Throwablebrick's website</description>
+      <language>en-us</language>
+      <atom:link href="https://www.rssboard.org/files/sample-rss-2.xml" rel="self" type="application/rss+xml" />
+      <item>
+         <title>New page, dig table</title>
+		 <link>http://www.throwablebrick.com/pages/digging_table.html</link>
+         <description>An automated D&D table to see what you find when you dig.</description>
+         <pubDate>Fri, 22 Aug 2025, 00:00:01 PST</pubDate>
+         <guid>http://www.throwablebrick.com/pages/digging_table.html</guid>
+      </item>
+   </channel>
+</rss>
