@@ -88,6 +88,7 @@ body {
 				<a href="/index.html">home</a>
 				<a href="/pages/blog/home.html">blog</a>
 				<a href="/pages/wiki/home.html">wiki</a>
+				<a href="/pages/digging_table.html">digging</a>
 			</div>
 		</div>
 	</div>
